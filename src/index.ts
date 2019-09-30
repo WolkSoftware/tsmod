@@ -5,7 +5,7 @@ import { promisify } from "util";
 
 const writeFileAsync = promisify(writeFile);
 
-export function main(args: string[]) {
+export async function main(args: string[]) {
   const options = parseArgumentsIntoOptions(args);
 
   if (options.version) {
@@ -14,7 +14,7 @@ export function main(args: string[]) {
   } else if (options.help) {
     printHelp();
   } else {
-    const transform = loadTransform(options.transform);
+    const transform = await loadTransform(options.transform);
     if (transform === undefined) {
       if (!options.silent) {
         throw new Error(`Invalid transform ${options.transform}`);
@@ -35,4 +35,6 @@ export function main(args: string[]) {
   }
 }
 
-main(process.argv);
+(async () => {
+  await main(process.argv);
+})();

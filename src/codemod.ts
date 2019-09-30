@@ -1,22 +1,23 @@
 import { Project, SourceFile } from "ts-morph";
 import { Options } from "./cli";
-import { normalize, join } from "path";
+import { normalize, join, parse } from "path";
+import { readFile } from "fs";
+import { promisify } from "util";
+import { transpileModule } from "typescript";
 
 export type Transform = (file: SourceFile, transformArgs: {}) => string;
-
+const readFileAsync = promisify(readFile);
 const tsConfigFilePath = "./tsconfig.json";
 
-export function loadTransform(transformPath: string): Transform | undefined {
+export async function loadTransform(
+  transformPath: string
+): Promise<Transform | undefined> {
   const actualPath = join(process.cwd(), normalize(transformPath));
-  const module = require(actualPath);
-  const keys = Object.keys(module);
-  if (keys.length > 0) {
-    const transformName = keys[0];
-    const transform: Transform = module[transformName];
-    if (typeof transform === "function") {
-      return transform;
-    }
-  }
+  const buffer = await readFileAsync(actualPath);
+  const tsSource = buffer.toString();
+  const jsSource = transpileModule(tsSource, {}).outputText;
+  const tramsform = eval(jsSource);
+  return tramsform;
 }
 
 export function runCodemod(

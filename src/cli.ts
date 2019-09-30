@@ -31,8 +31,7 @@ enum CommandDescriptions {
 }
 
 export function getVersion() {
-  const pjson = require("../package.json");
-  return pjson.version;
+  return "1.0.4";
 }
 
 export function printHelp() {
