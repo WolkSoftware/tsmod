@@ -10,10 +10,10 @@ npm install -g tsmod
 
 ## Usage
 
-The following example applies the transform `./var_to_const_tramsform.ts` to the files `./fileA.ts` and `./fileB.ts`:
+The following example applies the transform `var_to_const_tramsform.ts` to the files `fileA.ts` and `fileB.ts`:
 
 ```sh
-tsmod -t ./var_to_const_tramsform.ts ./fileA.ts ./fileB.ts
+tsmod -t var_to_const_tramsform.ts fileA.ts fileB.ts
 ```
 
 > **Please Note**: A `tsconfig.json` file is expected in the current directory when you run the previous command.
