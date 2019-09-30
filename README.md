@@ -16,6 +16,8 @@ The following example applies the transform `./var_to_const_tramsform.ts` to the
 tsmod -t ./var_to_const_tramsform.ts ./fileA.ts ./fileB.ts
 ```
 
+> **Please Note**: A `tsconfig.json` file is expected in the current directory when you run the previous command.
+
 ## Transform example
 
 The transfroms are powered by `ts-morph` you can learn more about the API at [https://ts-morph.com](https://ts-morph.com/manipulation/).

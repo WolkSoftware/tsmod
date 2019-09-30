@@ -7,7 +7,7 @@ import { transpileModule } from "typescript";
 
 export type Transform = (file: SourceFile, transformArgs: {}) => string;
 const readFileAsync = promisify(readFile);
-const tsConfigFilePath = "./tsconfig.json";
+const tsConfigFilePath = join(process.cwd(), "tsconfig.json");
 
 export async function loadTransform(
   transformPath: string
