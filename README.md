@@ -48,5 +48,5 @@ export const varToConstTransform = (file: SourceFile, transformArgs: {}) => {
 For additional help use the following:
 
 ```sh
-ts-node src/index.ts --help
+tsmod -h
 ```
