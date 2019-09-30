@@ -1,14 +1,13 @@
 {
   "name": "tsmod",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Refactor TypScript code programmatically using codemods",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "bin": {
-    "tsmod": "bin/index.sh"
+    "tsmod": "dist/src/index.js"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -p tsconfig.json"
   },
   "keywords": [],
   "author": "Remo Jansen",
