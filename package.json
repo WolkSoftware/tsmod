@@ -1,10 +1,10 @@
 {
   "name": "tsmod",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Refactor TypScript code programmatically using codemods",
   "main": "index.js",
   "bin": {
-    "tsmod": "dist/src/index.js"
+    "tsmod": "bin/index.sh"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",

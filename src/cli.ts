@@ -31,7 +31,7 @@ enum CommandDescriptions {
 }
 
 export function getVersion() {
-  return "1.0.5";
+  return "1.0.7";
 }
 
 export function printHelp() {
