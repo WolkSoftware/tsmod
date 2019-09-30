@@ -20,7 +20,7 @@ tsmod -t var_to_const_tramsform.ts fileA.ts fileB.ts
 
 ## Transform example
 
-The transfroms are powered by `ts-morph` you can learn more about the API at [https://ts-morph.com](https://ts-morph.com/manipulation/).
+The transfroms are powered by `ts-morph` you can learn more about its API at [https://ts-morph.com](https://ts-morph.com/manipulation/).
 
 The following example changes all `var` variable declarations into `const` variable declarations:
 
@@ -44,6 +44,8 @@ export const varToConstTransform = (file: SourceFile, transformArgs: {}) => {
   return updatedSourceCode;
 };
 ```
+
+> **Please Note**: The transform file must have one unique export which should be the transform function.
 
 ## Options
 
