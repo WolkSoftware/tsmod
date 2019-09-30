@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ts-node ./src/index.ts $@
+ts-node -P ./tsconfig.json ./src/index.ts $@
