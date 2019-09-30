@@ -23,10 +23,10 @@ enum CommandAliases {
 enum CommandDescriptions {
   help = "print this help and exit",
   version = "show more information about the transform process",
-  transform = "path to the transform file. Can be either a local path or url (default: ./transform.ts)",
-  dry = "dry run (no changes are made to files) (default: false)",
-  print = "print transformed files to stdout, useful for development (default: false)",
-  silent = "do not write to stdout or stderr (default: false)",
+  transform = "path to the transform file (default: ./transform.ts)",
+  dry = "dry run (no changes are made to files)",
+  print = "print transformed files to stdout, useful for development",
+  silent = "do not write to stdout or stderr",
   args = "arguments to be passed to the transform"
 }
 
@@ -40,15 +40,14 @@ export function printHelp() {
     CommandOptions
   ) as any;
   const output = [
-    "\nUsage: tscodeshift [OPTION]... FILE_PATH...",
-    "  or:  tscodeshift [OPTION]... -t TRANSFORM_PATH FILE_PATH...\n",
+    "\nUsage: tsmod [OPTION]... FILE_PATH...",
+    "  or:  tsmod [OPTION]... -t TRANSFORM_PATH FILE_PATH...\n",
     "Apply transform logic in TRANSFORM_PATH to every FILE_PATH\n",
     "Options:",
     ...keys.map(
       k =>
-        `  ${CommandAliases[k]}, ${CommandOptions[k]} - ${CommandDescriptions[k]}`
-    ),
-    "\n"
+        `  ${CommandAliases[k]}, ${CommandOptions[k]} ${CommandDescriptions[k]}`
+    )
   ];
   output.forEach(l => console.log(l));
 }

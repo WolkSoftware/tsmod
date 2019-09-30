@@ -11,9 +11,7 @@ export function main(args: string[]) {
   if (options.version) {
     const version = getVersion();
     console.log(`v${version}`);
-  }
-
-  if (options.help) {
+  } else if (options.help) {
     printHelp();
   } else {
     const transform = loadTransform(options.transform);
