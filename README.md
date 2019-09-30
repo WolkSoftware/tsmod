@@ -24,10 +24,10 @@ The typescript module is the TypeScript compiler and the ts-node module is a ver
 
 ## Usage
 
-The following command applies the transform `var_to_const_tramsform.ts` to the files `fileA.ts` and `fileB.ts`:
+The following command applies the transform `var_to_const_transform.ts` to the files `fileA.ts` and `fileB.ts`:
 
 ```sh
-tsmod -t var_to_const_tramsform.ts fileA.ts fileB.ts
+tsmod -t var_to_const_transform.ts fileA.ts fileB.ts
 ```
 
 > **Please Note**: A TypeScript compiler configuration file (`tsconfig.json`) file is expected in the current directory when you run the previous command.
