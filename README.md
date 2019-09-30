@@ -5,7 +5,7 @@ Refactor TypScript code programmatically using codemods.
 ## Installation
 
 ```
-npm install -g ts-node typescript tsmod
+npm install -g tsmod
 ```
 
 ## Usage
