@@ -59,6 +59,10 @@ export const varToConstTransform = (file: SourceFile, transformArgs: {}) => {
 };
 ```
 
+The code is represented using a data structure known as Abstract Syntax Tree (AST). You can navigate and modify the AST to generate updated code. You can visit [https://ts-ast-viewer.com/](https://ts-ast-viewer.com/) to visualize the AST if you need help navigating it.
+
+![](/ast-viewer.jpg)
+
 ## Options
 
 For additional help use the following:
